@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $category->name }}</title>
+</head>
+<body>
+    <h1>{{ $category->name }}</h1>
+    <p>{{ $category->description }}</p>
+
+    <a href="/categories">← Terug naar alle categorieën</a>
+</body>
+</html>
