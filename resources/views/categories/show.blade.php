@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $category->name }}</title>
-</head>
-<body>
-    <h1>{{ $category->name }}</h1>
-    <p>{{ $category->description }}</p>
+<x-layout title="Product detail">
+    <x-panel title="Categorie informatie" class="category-panel" id="category-panel">
+        <p><strong>Categorie:</strong> {{ $category->name }}</p>
+        <p><strong>Beschrijving:</strong> {{ $category->description }}</p>
+    </x-panel>
 
-    <a href="/categories">← Terug naar alle categorieën</a>
-</body>
-</html>
+    <a href="/categories">Terug naar alle categorieen</a>
+</x-layout> 

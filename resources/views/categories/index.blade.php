@@ -1,26 +1,14 @@
-<div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorieën overzicht</title>
-</head>
-<body>
-    <h1>Categorieën overzicht</h1>
-    
+<x-layout title="Categorieen overzicht">
+    <h1>Categorieen overzicht</h1>
+
     @if($categories->isEmpty())
-        <p>Geen categorieën gevonden.</p>
+        <p>Geen categorieen gevonden.</p>
     @else
-        <div class="categories-list">
-            @foreach($categories as $category)
-                <div class="category-item">
-                <h2><a href="/categories/{{ $category->id }}">{{ $category->name }}</a></h2>
+        @foreach($categories as $category)
+            <x-panel title="{{ $category->name }}" class="category-panel">
                 <p>{{ $category->description }}</p>
-                </div>
-            @endforeach
-        </div>
+                <a href="/categories/{{ $category->id }}">Bekijk details</a>
+            </x-panel>
+        @endforeach
     @endif
-</body>
-</html>
-</div>
+</x-layout>
