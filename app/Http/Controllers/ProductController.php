@@ -11,5 +11,13 @@ class ProductController extends Controller
     {
         $products = Product::with('category')->get();
         return view('products.index', compact('products'));
+        $products = Product::with('category')->get();
+        return view('products.index', compact('products'));
+    }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('products.show', compact('product'));
     }
 }

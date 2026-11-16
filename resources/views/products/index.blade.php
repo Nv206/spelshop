@@ -13,7 +13,7 @@
     @else
         @foreach($products as $product)
             <div>
-                <h2>{{ $product->name }}</h2>
+            <h2><a href="/products/{{ $product->id }}">{{ $product->name }}</a></h2>
                 <p>{{ $product->description }}</p>
                 <p>Categorie: {{ $product->category->name ?? 'Onbekend' }}</p>
             </div>
