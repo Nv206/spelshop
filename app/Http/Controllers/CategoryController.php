@@ -13,14 +13,11 @@ class CategoryController extends Controller
         // Lijst alle categorieën ophalen
         $categories = Category::all();
         return view('categories.index', compact('categories'));
-
-        $categories = Category::all();
-        return view('categories.index', compact('categories'));
     }
 
     public function show($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::with('products')->findOrFail($id);
         return view('categories.show', compact('category'));
     }
 }
